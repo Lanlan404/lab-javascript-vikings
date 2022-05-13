@@ -36,9 +36,6 @@ class Soldier {
     }
   }
 
-
-
-
 // Saxon
 class Saxon extends Soldier{
   attack(){
@@ -57,7 +54,36 @@ class Saxon extends Soldier{
 }
 
 // War
-class War {}
+class War {
+  constructor(){
+  this.vikingArmy=[];
+  this.saxonArmy=[];
+  };
+  addViking(Viking){
+    this.vikingArmy.push(Viking)
+  };
+  addSaxon(Saxon){
+    this.saxonArmy.push(Saxon)
+  };
+  vikingAttack(){
+
+
+  };
+  saxonAttack(){
+
+  };
+  showStatus(){
+    if (this.saxonArmy === []){
+      return "Vikings have won the war of the century!"
+    }
+    if (this.vikingArmy === []){
+      return "Saxons have fought for their lives and survived another day..."
+    }
+    else {
+      return "Vikings and Saxons are still in the thick of battle."
+    }
+  }
+}
 
 
 // The following is required to make unit tests work.
