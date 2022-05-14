@@ -37,8 +37,8 @@ class Soldier {
   }
 
 // Saxon
-class Saxon extends Soldier{
-  attack(){
+class Saxon extends Soldier {
+  attack() {
    super.attack()
    return this.strength
   }
@@ -55,23 +55,39 @@ class Saxon extends Soldier{
 
 // War
 class War {
-  constructor(){
-  this.vikingArmy=[];
-  this.saxonArmy=[];
+  constructor() {
+    this.vikingArmy=[];
+    this.saxonArmy=[];
   };
-  addViking(Viking){
+
+  addViking(Viking) {
     this.vikingArmy.push(Viking)
   };
-  addSaxon(Saxon){
+
+  addSaxon(Saxon) {
     this.saxonArmy.push(Saxon)
   };
-  vikingAttack(){
 
+  vikingAttack() {
+     super.vikingAttack ()
+     return Viking.strength;
 
-  };
-  saxonAttack(){
+     receiveDamage(Saxon) = this.vikingAttack ();
+       if (Saxon receiveDamage <= 0) {
+         this.saxonArmy.slice(Saxon);
+       }
+  }
 
-  };
+  saxonAttack() {
+    super.saxonAttack ()
+     return Saxon.strength;
+
+     receiveDamage(Viking) = this.saxonAttack ();
+       if (Viking receiveDamage <= 0) {
+         this.vikingArmy.slice(Viking);
+       };
+   }
+
   showStatus(){
     if (this.saxonArmy === []){
       return "Vikings have won the war of the century!"
